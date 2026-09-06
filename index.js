@@ -50,3 +50,25 @@
 
 // S3(simple storage service)
 // S3 is storage service that allows you to store unlimited data and retrive it from anywhere like browser..etc. It stores the files in form of objects inside container called buckets and each bucket is a unique identifier. Most commonly its used in user generated content(uploading picture/pdfs), hosting static websites, secure file handeling.
+
+
+// RDS(Relational Database Service)
+// RDS is managed database service provided by aws simpliying setting up, operating, scaling relational databases. If we setup the db then we need to ec2 instance where OS, db maintenace, backup scripts related task etc we need to manage but with the help of RDS this all things are handled by AWS and it supports DBs such as amazon aurora, postgresql, mysql, mariadb etc
+
+
+// Lambda functions
+// Lamda functions are serverless compute services provided by aws, serverless doesn't means it does not have server. It has server but we do not manage it that's why its termed as serverless. So here developers can host the part of code and remaining things like scaling, descaling, server maintanace etc these all things are taken care by aws itself.
+// Examples - 
+// Image Processing: The main server handles login and feeds. When a user uploads a photo to Amazon S3, it triggers a Lambda function to create thumbnails and immediately shut down.
+// Payment Webhooks: The main server manages the shop and checkout UI. When Stripe completes a payment, Amazon API Gateway triggers a Lambda function to validate the payment, update Amazon DynamoDB, and email a receipt in under 200 ms.
+// Scheduled Reports: The main server runs interactive dashboards. At midnight, Amazon EventBridge triggers a Lambda function to query sales data, generate PDF reports, email them, and shut off.  
+
+
+// API Gateways
+// API Gateways acts as a single entry point for applications backend services instead of calling directly lambda functions or backend services, every request will hit the api gateway and this gateway will inspect the requests, apply security checks and route it to appropriate backend service/lambda function.
+// Some use cases
+// Traffic Control (Throttling & Rate Limiting): Protects your system from being overwhelmed or attacked by automatically limiting how many requests a user can make per second.
+// Built-in Caching: Saves and reuses recent responses at the gateway level so your backend functions don't have to re-run for identical requests.
+// Custom URLs & Easy Routing: Lets you create clean, professional URLs (like [api.myapp.com/users](https://api.myapp.com/users)) and map different paths to different backend functions from one place.
+// Data Transformation: Acts as a translator that modifies request headers, parameters, or data formats before reaching your function—and cleans up the response before returning it to the user.
+
